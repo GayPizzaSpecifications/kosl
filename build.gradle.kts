@@ -16,7 +16,7 @@ repositories {
 fun kotlinx(name: String, version: String): String = "org.jetbrains.kotlinx:kotlinx-$name:$version"
 
 dependencies {
-  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 
   @Suppress("GradlePackageUpdate")
   api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
