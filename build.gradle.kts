@@ -20,7 +20,7 @@ dependencies {
 
   @Suppress("GradlePackageUpdate")
   api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-  api("io.fabric8:kubernetes-client:5.8.0")
+  api("io.fabric8:kubernetes-client:6.2.0")
 
   implementation("com.github.ajalt.clikt:clikt:3.3.0")
 
