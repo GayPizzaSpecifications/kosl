@@ -6,7 +6,7 @@ import io.kosl.spec.ServiceSpec
 import io.kosl.spec.WorkspaceSpec
 
 fun createHelloWorldEnvironment() = KoslTestWorkspace.populated {
-  spec = WorkspaceSpec("ghcr.io/kendfinger/kosl/test", listOf(
+  spec = WorkspaceSpec("ghcr.io/azenla/kosl/test", listOf(
     "hello-world"
   ))
 

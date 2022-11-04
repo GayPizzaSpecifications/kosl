@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  kotlin("jvm") version "1.5.31"
-  kotlin("plugin.serialization") version "1.5.31"
+  kotlin("jvm") version "1.7.20"
+  kotlin("plugin.serialization") version "1.7.20"
 
-  id("com.github.johnrengelman.shadow") version "7.1.0"
+  id("com.github.johnrengelman.shadow") version "7.1.2"
 
   application
 }
@@ -16,22 +16,22 @@ repositories {
 fun kotlinx(name: String, version: String): String = "org.jetbrains.kotlinx:kotlinx-$name:$version"
 
 dependencies {
-  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+  api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 
   @Suppress("GradlePackageUpdate")
-  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-  api("io.fabric8:kubernetes-client:5.8.0")
+  api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+  api("io.fabric8:kubernetes-client:6.2.0")
 
-  implementation("com.github.ajalt.clikt:clikt:3.3.0")
+  implementation("com.github.ajalt.clikt:clikt:3.5.0")
 
-  implementation("org.slf4j:slf4j-api:1.7.32")
-  implementation("org.slf4j:slf4j-simple:1.7.32")
+  implementation("org.slf4j:slf4j-api:2.0.3")
+  implementation("org.slf4j:slf4j-simple:2.0.3")
 
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
-  testImplementation("org.testcontainers:testcontainers:1.16.0")
-  testImplementation("org.testcontainers:junit-jupiter:1.16.0")
-  testImplementation(kotlin("test", "1.5.31"))
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+  testImplementation("org.testcontainers:testcontainers:1.17.4")
+  testImplementation("org.testcontainers:junit-jupiter:1.17.4")
+  testImplementation(kotlin("test", "1.7.20"))
 }
 
 tasks.withType<KotlinCompile> {
@@ -57,6 +57,6 @@ distributions.main.configure {
 }
 
 tasks.withType<Wrapper> {
-  gradleVersion = "7.2"
+  gradleVersion = "7.5.1"
   distributionType = Wrapper.DistributionType.ALL
 }
