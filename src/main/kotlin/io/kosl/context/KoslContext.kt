@@ -45,6 +45,14 @@ class KoslContext {
     if (shouldAnalyzeExecution) {
       val execution = job.analyze()
       execution.requiredFilePaths.forEach {
+        println("Execution Requires File: ${it.pathString}")
+      }
+
+      execution.requiredDirectoryPaths.forEach {
+        println("Execution Requires Directory: ${it.pathString}")
+      }
+
+      execution.requiredEntityPaths.forEach {
         println("Execution Requires Path: ${it.pathString}")
       }
 

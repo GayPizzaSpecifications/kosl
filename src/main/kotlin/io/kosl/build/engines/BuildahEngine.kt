@@ -3,10 +3,7 @@ package io.kosl.build.engines
 import io.kosl.build.BuildEngine
 import io.kosl.build.BuildEngineJob
 import io.kosl.context.KoslContext
-import io.kosl.execution.parameter.CommandName
-import io.kosl.execution.parameter.RawArgument
-import io.kosl.execution.parameter.RelativePath
-import io.kosl.execution.parameter.SubCommandName
+import io.kosl.execution.parameter.*
 
 class BuildahEngine: BuildEngine {
   override fun process(context: KoslContext, job: BuildEngineJob) {
@@ -16,8 +13,8 @@ class BuildahEngine: BuildEngine {
       RawArgument("-t"),
       RawArgument("${job.targetImageName}:${job.targetImageTag}"),
       RawArgument("-f"),
-      RelativePath(job.buildFilePath),
-      RelativePath(job.contextDirectoryPath)
+      RelativeFilePath(job.buildFilePath),
+      RelativeDirectoryPath(job.contextDirectoryPath)
     )
 
     context.executeInteractiveProcess(buildCommand)

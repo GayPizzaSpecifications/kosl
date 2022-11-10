@@ -7,7 +7,8 @@ import kotlinx.serialization.serializer
 class ServiceSpec(
   val name: String,
   val build: BuildSpec,
-  val deployment: DeploymentSpec
+  val deployment: DeploymentSpec,
+  val disabled: Boolean = false
 ) {
   companion object : KoslSpec<ServiceSpec>(serializer())
 }

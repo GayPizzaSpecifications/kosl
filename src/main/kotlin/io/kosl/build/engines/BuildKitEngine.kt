@@ -15,11 +15,11 @@ class BuildKitEngine: BuildEngine {
       RawArgument("--frontend"),
       RawArgument("dockerfile.v0"),
       RawArgument("--local"),
-      JoinedParameter(RawArgument("context="), RelativePath(job.contextDirectoryPath)),
+      JoinedParameter(RawArgument("context="), RelativeDirectoryPath(job.contextDirectoryPath)),
       RawArgument("--local"),
-      JoinedParameter(RawArgument("dockerfile="), RelativePath(job.contextDirectoryPath)),
+      JoinedParameter(RawArgument("dockerfile="), RelativeDirectoryPath(job.contextDirectoryPath)),
       RawArgument("--opt"),
-      JoinedParameter(RawArgument("source="), RelativePath(job.buildFilePath)),
+      JoinedParameter(RawArgument("source="), RelativeFilePath(job.buildFilePath)),
       RawArgument("--output"),
       RawArgument("type=image,name=${job.targetImageName}:${job.targetImageTag},push=${job.push}")
     )

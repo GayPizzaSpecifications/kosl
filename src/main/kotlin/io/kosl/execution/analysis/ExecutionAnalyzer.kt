@@ -1,21 +1,29 @@
 package io.kosl.execution.analysis
 
 import io.kosl.execution.ExecutionJob
-import io.kosl.execution.parameter.CommandName
-import io.kosl.execution.parameter.RelativePath
-import io.kosl.execution.parameter.SubCommandName
+import io.kosl.execution.parameter.*
 import io.kosl.io.Path
 
 class ExecutionAnalyzer(val job: ExecutionJob) {
   private val expanded = job.expandSubParameters()
 
   fun analyze(): ExecutionAnalysis = ExecutionAnalysis(
-    findRequiredPaths(),
+    findRequiredFilePaths(),
+    findRequiredDirectoryPaths(),
+    findRequiredEntityPaths(),
     findRequiredCommands(),
     findSubCommandPatterns()
   )
 
-  fun findRequiredPaths(): List<Path> {
+  fun findRequiredFilePaths(): List<Path> {
+    return expanded.filterIsInstance<RelativeFilePath>().map { it.path }
+  }
+
+  fun findRequiredDirectoryPaths(): List<Path> {
+    return expanded.filterIsInstance<RelativeDirectoryPath>().map { it.path }
+  }
+
+  fun findRequiredEntityPaths(): List<Path> {
     return expanded.filterIsInstance<RelativePath>().map { it.path }
   }
 
