@@ -3,10 +3,7 @@ package io.kosl.build.engines
 import io.kosl.build.BuildEngine
 import io.kosl.build.BuildEngineJob
 import io.kosl.context.KoslContext
-import io.kosl.execution.parameter.CommandName
-import io.kosl.execution.parameter.RawArgument
-import io.kosl.execution.parameter.RelativePath
-import io.kosl.execution.parameter.SubCommandName
+import io.kosl.execution.parameter.*
 
 class DockerBuildxEngine: BuildEngine {
   override fun process(context: KoslContext, job: BuildEngineJob) {
@@ -17,7 +14,7 @@ class DockerBuildxEngine: BuildEngine {
       RawArgument("-t"),
       RawArgument("${job.targetImageName}:${job.targetImageTag}"),
       RawArgument("-f"),
-      RelativePath(job.buildFilePath)
+      RelativeFilePath(job.buildFilePath)
     )
 
     if (job.push) {

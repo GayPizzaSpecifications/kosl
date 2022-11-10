@@ -1,5 +1,5 @@
 {
-  "defaultImagePrefix": "registry.fork.run/kosl/kosl/examples/web-servers",
+  "defaultImagePrefix": "ghcr.io/mysticlgbt/kosl/examples/web-servers",
   "services": [
     "dart-server",
     "python-server",
