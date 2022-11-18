@@ -23,7 +23,7 @@ dependencies {
 
   implementation("com.github.ajalt.clikt:clikt:3.5.0")
 
-  implementation("org.slf4j:slf4j-api:2.0.3")
+  implementation("org.slf4j:slf4j-api:2.0.4")
   implementation("org.slf4j:slf4j-simple:2.0.3")
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
