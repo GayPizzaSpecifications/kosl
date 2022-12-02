@@ -1,9 +1,0 @@
-{
-  "name": "python-server",
-  "build": {
-    "image": "python-server"
-  },
-  "deployment": {
-    "replicas": 3
-  }
-}

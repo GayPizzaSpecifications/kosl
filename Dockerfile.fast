@@ -1,6 +1,0 @@
-FROM openjdk:11
-WORKDIR /kosl
-COPY build/distributions/kosl.zip /kosl/kosl.zip
-RUN unzip kosl.zip && rm kosl.zip && mv kosl/* . && rm -rf kosl
-WORKDIR /source
-ENTRYPOINT ["/kosl/bin/kosl"]
