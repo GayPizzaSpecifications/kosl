@@ -1,9 +1,0 @@
-{
-  "name": "go-server",
-  "build": {
-    "image": "go-server"
-  },
-  "deployment": {
-    "replicas": 3
-  }
-}
