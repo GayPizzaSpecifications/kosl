@@ -19,7 +19,7 @@ dependencies {
   api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 
   api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-  api("io.fabric8:kubernetes-client:6.2.0")
+  api("io.fabric8:kubernetes-client:6.3.0")
 
   implementation("com.github.ajalt.clikt:clikt:3.5.0")
 
