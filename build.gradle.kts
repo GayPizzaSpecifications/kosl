@@ -21,7 +21,7 @@ dependencies {
   api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
   api("io.fabric8:kubernetes-client:6.2.0")
 
-  implementation("com.github.ajalt.clikt:clikt:3.5.0")
+  implementation("com.github.ajalt.clikt:clikt:3.5.2")
 
   implementation("org.slf4j:slf4j-api:2.0.3")
   implementation("org.slf4j:slf4j-simple:2.0.3")
